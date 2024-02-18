@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class SubCategoryController extends Controller
 {
-    // public function add_sub_category()
-    // {
-        
-    //     return view('admin_panel.sub_category.add_sub_category');
-    // }
+    
     public function store_sub_category(Request $request)
     {
         if (Auth::id()) {
@@ -21,7 +17,7 @@ class SubCategoryController extends Controller
             $userId = Auth::id();
             SubCategory::create([
                 'admin_or_user_id'  => $userId,
-                'category_name'     => $request->category_name,
+                'sub_category_name'     => $request->sub_category_name,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ]);
@@ -47,17 +43,6 @@ class SubCategoryController extends Controller
 
         
     }
-
-    // public function edit_size(Request $request, $id)
-    // {
-    //     $userId = Auth::id();
-    //     $all_projects = Project::where('adminOrUserID', '=', $userId)->get();
-    //     $sizedetails = PlotSize::findOrFail($id);
-    //     return view('admin.plot_size.edit_size', [
-    //         'sizedetails' => $sizedetails,
-    //         'all_projects' => $all_projects
-    //     ]);
-    // }
     public function update_subcategory(Request $request)
     {
         if (Auth::check()) {
@@ -65,7 +50,7 @@ class SubCategoryController extends Controller
             $subCategoryId = $request->subCategoryId;
     
             SubCategory::where('id', '=', $subCategoryId)->update([
-                'category_name' => $request->subCategoryName,
+                'sub_category_name' => $request->subCategoryName,
                 'updated_at' => Carbon::now(),
             ]);
     

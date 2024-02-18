@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryImages;
+use App\Http\Controllers\CategoryImagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubCategoryController;
@@ -36,6 +38,17 @@ Route::post('/update-subcategory', [SubCategoryController::class, 'update_subcat
 
 //category
 Route::get('/category', [CategoryController::class, 'category'])->middleware(['auth','admin'])->name('category');
+Route::post('/store-category', [CategoryController::class, 'store_category'])->name('store-category');
+Route::post('/update-category', [CategoryController::class, 'update_category'])->name('update-category');
+
+// Category Images
+Route::get('/category-images', [CategoryImagesController::class, 'category_images'])->middleware(['auth','admin'])->name('category-images');
+Route::post('/store-category-images', [CategoryImagesController::class, 'store_category_images'])->name('store-category-images');
+Route::get('/get-categories/{subCategory}', [CategoryImagesController::class, 'getCategories']);
+Route::get('/get-category', [CategoryImagesController::class, 'get_category'])->name('get-category');
+// Route::post('/update-category', [CategoryController::class, 'update_category'])->name('update-category');
+
+
 
 
 

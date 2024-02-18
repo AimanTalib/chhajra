@@ -20,12 +20,12 @@
                 </a>
             </li>
             <li>
-                <a class="" href="javascript:void()" aria-expanded="false">
+                <a class="" href="{{ route('category') }}" aria-expanded="false">
                     <i class="icon-graph menu-icon"></i> <span class="nav-text">Category</span>
                 </a>
             </li>
             <li>
-                <a class="" href="javascript:void()" aria-expanded="false">
+                <a class="" href="{{ route('category-images') }}" aria-expanded="false">
                     <i class="icon-graph menu-icon"></i> <span class="nav-text">Category Images</span>
                 </a>
             </li>

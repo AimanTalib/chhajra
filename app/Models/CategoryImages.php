@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class SubCategory extends Model
+class CategoryImages extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -14,5 +14,7 @@ class SubCategory extends Model
     protected $fillable = [
         'admin_or_user_id',
         'sub_category_name',
+        'category_name',
+        'images',
     ];
 }
